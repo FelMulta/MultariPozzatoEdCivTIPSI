@@ -22,11 +22,7 @@ namespace EdCivicaMultariPozzato
                     n = int.Parse(Console.ReadLine());
 
                     risultato = Cifratura(s, n);
-                    if(risultato == " "){
-                        Console.WriteLine("Semaforo rosso, ERRORE: nessun risultato");
-                    }else{
-                        Console.WriteLine(risultato);                    
-                    }
+                    Console.WriteLine(risultato);
                     break;
                 case 2:
                     Console.WriteLine("Inserisci la stringa da decifrare: ");
@@ -35,11 +31,7 @@ namespace EdCivicaMultariPozzato
                     n = int.Parse(Console.ReadLine());
 
                     risultato = Decifratura(s, n);
-                    if(risultato == " "){
-                        Console.WriteLine("Semaforo rosso, ERRORE: nessun risultato");
-                    }else{
-                        Console.WriteLine(risultato);                    
-                    }
+                    Console.WriteLine(risultato);
                     break;
             }
         }
@@ -70,6 +62,19 @@ namespace EdCivicaMultariPozzato
             string alfabeto = "abcdefghijklmnopqrstuvwxyz";
             string risultato = "";
 
+            foreach (char c in s)
+            {
+                int posizione = alfabeto.IndexOf(c);
+                if (posizione >= 0)
+                {
+                    posizione = (posizione - n + alfabeto.Length) % alfabeto.Length;
+                    risultato += alfabeto[posizione];
+                }
+                else
+                {
+                    risultato += c;
+                }
+            }
             return risultato;
         }
     }
