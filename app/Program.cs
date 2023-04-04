@@ -10,13 +10,38 @@ namespace EdCivicaMultariPozzato
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Inserisci la stringa da cifrare: ");
-            string s = Console.ReadLine();
-            Console.WriteLine("Inserisci il numero di posizioni da spostare: ");
-            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Funzione da eseguire: ");
+            int smistamento = int.Parse(Console.ReadLine());
+            string s, risultato;
+            int n;
+            switch (smistamento){
+                case 1: 
+                    Console.WriteLine("Inserisci la stringa da cifrare: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci il numero di posizioni da spostare: ");
+                    n = int.Parse(Console.ReadLine());
 
-            string risultato = Cifratura(s, n);
-            Console.WriteLine(risultato);
+                    risultato = Cifratura(s, n);
+                    if(risultato == " "){
+                        Console.WriteLine("Semaforo rosso, ERRORE: nessun risultato");
+                    }else{
+                        Console.WriteLine(risultato);                    
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Inserisci la stringa da decifrare: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci il numero di posizioni da spostare: ");
+                    n = int.Parse(Console.ReadLine());
+
+                    risultato = Decifratura(s, n);
+                    if(risultato == " "){
+                        Console.WriteLine("Semaforo rosso, ERRORE: nessun risultato");
+                    }else{
+                        Console.WriteLine(risultato);                    
+                    }
+                    break;
+            }
         }
 
         public static string Cifratura(string s, int n)
@@ -39,5 +64,13 @@ namespace EdCivicaMultariPozzato
             }
             return risultato;
         }  
+
+        public static string Decifratura(string s, int n)
+        {
+            string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+            string risultato = "";
+
+            return risultato;
+        }
     }
 }
