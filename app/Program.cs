@@ -150,7 +150,27 @@ namespace EdCivicaMultariPozzato
 
                 string Punto5(string s, int n, int sum, double product)
                 {
-                
+                    if(n % 2 == 0)
+                    {
+                        contatore++;
+                        string risultato = SostituzioneLettereValori(s, n, sum);
+                        return risultato;
+                    }
+                    else
+                    {
+                        contatore++;
+                        string risultato = SostituzioneLettereValoriDivisione(s, n, product);
+                        return risultato;
+                    }
+                }
+                Console.WriteLine("Vuoi continuare l'esecuzione? (s/n)-> ");
+                char verifica = char.Parse(Console.ReadLine());
+                if (verifica == 's')
+                {
+                    chiuso = false;
+                }else{
+                    chiuso = true;
+                }
             }while(!chiuso);      
         }
     }
