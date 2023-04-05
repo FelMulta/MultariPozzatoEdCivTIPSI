@@ -69,6 +69,9 @@ namespace EdCivicaMultariPozzato
                     case 6:
                         Console.WriteLine("Hai usato la funzione 5 " + contatore + " volte.");
                         break;
+                    case 7:
+
+                        break;
                 }
             
 
