@@ -13,7 +13,8 @@ namespace EdCivicaMultariPozzato
             Console.WriteLine("Funzione da eseguire: ");
             int smistamento = int.Parse(Console.ReadLine());
             string s, risultato;
-            int n, sum  = 0;
+            int n;
+            int sum  = 0;
             double product = 1.0; 
             switch (smistamento){
                 case 1: 
@@ -50,6 +51,15 @@ namespace EdCivicaMultariPozzato
                     n = int.Parse(Console.ReadLine());
 
                     risultato = SostituzioneLettereValoriDivisione(s, n, product);
+                    Console.WriteLine(risultato);
+                    break;
+                case 5:
+                    Console.WriteLine("Inserisci la stringa da decifrare: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci il numero di posizioni da spostare: ");
+                    n = int.Parse(Console.ReadLine());
+
+                    risultato = Punto5(s, n, sum, product);
                     Console.WriteLine(risultato);
                     break;
             }
@@ -129,6 +139,14 @@ namespace EdCivicaMultariPozzato
             Console.WriteLine("Risultato: " + result);
             string stringResult = result.ToString();
             return  stringResult;
+        }
+
+        public static string Punto5(string s, int n, int sum, double product)
+        {
+            if(n % 2 == 0)
+            {
+                
+            }
         }
     }
 }
