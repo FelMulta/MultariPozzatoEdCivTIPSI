@@ -115,7 +115,19 @@ namespace EdCivicaMultariPozzato
 
         public static string SostituzioneLettereValoriDivisione(string s, int n, double product)
         {
+            foreach (char c in s) 
+            {
+                int value = (int) char.ToUpper(c) - 64;
+                if (value < 1 || value > 26) 
+                {
+                    Console.WriteLine("La stringa deve contenere solo lettere dell'alfabeto.");
+                }
+                product *= value;
+            }
+            double result = Math.Ceiling(product / n);
 
+            Console.WriteLine("Risultato: " + result);
+            string stringResult = result.ToString();
             return  stringResult;
         }
     }
