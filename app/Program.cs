@@ -88,6 +88,18 @@ namespace EdCivicaMultariPozzato
         }
         public static string SostituzioneLettereValori(string s, int n, int sum) 
         {
+                        foreach (char c in s) 
+            {
+                int value = (int) char.ToUpper(c) - 64;
+                if (value < 1 || value > 26) 
+                {
+                    Console.WriteLine("La stringa deve contenere solo lettere dell'alfabeto.");
+                }
+                sum += value;
+            }
+            int result = sum * n;
+            Console.WriteLine("Risultato: " + result);
+            string stringResult = result.ToString();
             return  stringResult;
         }
     }
