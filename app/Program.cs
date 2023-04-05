@@ -145,7 +145,13 @@ namespace EdCivicaMultariPozzato
         {
             if(n % 2 == 0)
             {
-                
+                string risultato = SostituzioneLettereValori(s, n, sum);
+                return risultato;
+            }
+            else
+            {
+                string risultato = SostituzioneLettereValoriDivisione(s, n, product);
+                return risultato;
             }
         }
     }
