@@ -13,7 +13,7 @@ namespace EdCivicaMultariPozzato
             Console.WriteLine("Funzione da eseguire: ");
             int smistamento = int.Parse(Console.ReadLine());
             string s, risultato;
-            int n;
+            int n, sum  = 0;
             switch (smistamento){
                 case 1: 
                     Console.WriteLine("Inserisci la stringa da cifrare: ");
@@ -31,6 +31,15 @@ namespace EdCivicaMultariPozzato
                     n = int.Parse(Console.ReadLine());
 
                     risultato = Decifratura(s, n);
+                    Console.WriteLine(risultato);
+                    break;
+                case 3:
+                    Console.WriteLine("Inserisci la stringa da decifrare: ");
+                    s = Console.ReadLine();
+                    Console.WriteLine("Inserisci il numero di posizioni da spostare: ");
+                    n = int.Parse(Console.ReadLine());
+
+                    risultato = SostituzioneLettereValori(s, n, sum);
                     Console.WriteLine(risultato);
                     break;
             }
@@ -76,6 +85,10 @@ namespace EdCivicaMultariPozzato
                 }
             }
             return risultato;
+        }
+        public static string SostituzioneLettereValori(string s, int n, int sum) 
+        {
+            return  stringResult;
         }
     }
 }
