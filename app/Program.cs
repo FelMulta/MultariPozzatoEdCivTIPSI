@@ -70,7 +70,11 @@ namespace EdCivicaMultariPozzato
                         Console.WriteLine("Hai usato la funzione 5 " + contatore + " volte.");
                         break;
                     case 7:
+                        Console.WriteLine("Inserisci la stringa da decifrare: ");
+                        s = Console.ReadLine();
 
+                        risultato = Punto5(s, contatore, sum, product);
+                        Console.WriteLine(risultato);
                         break;
                 }
             
